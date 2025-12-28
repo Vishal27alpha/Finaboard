@@ -79,3 +79,16 @@ export interface ChartDataPoint {
   close: number
   volume?: number
 }
+export interface StockData {
+  symbol: string
+  price?: number
+  open?: number
+  high?: number
+  low?: number
+  change?: number
+  changePercent?: number
+
+  
+  [key: string]: any
+}
+
