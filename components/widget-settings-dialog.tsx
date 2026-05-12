@@ -29,6 +29,7 @@ export function WidgetSettingsDialog({ widget, open, onOpenChange }: WidgetSetti
   const [fields, setFields] = useState<FieldConfig[]>(widget.config.fields || [])
   const [previewData, setPreviewData] = useState<any>(null)
   const [isLoadingPreview, setIsLoadingPreview] = useState(false)
+  const isDirectIndianApiUrl = /https?:\/\/stock\.indianapi\.in/i.test(apiEndpoint.trim())
 
   const handleFieldToggle = (path: string, label: string) => {
     setFields((prev) => {
@@ -283,6 +284,7 @@ export function WidgetSettingsDialog({ widget, open, onOpenChange }: WidgetSetti
   const [fields, setFields] = useState<FieldConfig[]>(widget.config.fields || [])
   const [previewData, setPreviewData] = useState<any>(null)
   const [isLoadingPreview, setIsLoadingPreview] = useState(false)
+  const isDirectIndianApiUrl = /https?:\/\/stock\.indianapi\.in/i.test(apiEndpoint.trim())
 
   const handleFieldToggle = (path: string, label: string) => {
     setFields((prev) => {
@@ -387,6 +389,22 @@ export function WidgetSettingsDialog({ widget, open, onOpenChange }: WidgetSetti
             <div className="space-y-2">
               <Label>API Endpoint</Label>
               <Input value={apiEndpoint} onChange={(e) => setApiEndpoint(e.target.value)} />
+              <p className="text-xs text-muted-foreground">
+                For authenticated providers, use local routes like
+                {" "}
+                <span className="font-mono">/api/indian-stock?name=Reliance</span>
+                {" "}
+                instead of the provider&apos;s direct URL.
+              </p>
+              {isDirectIndianApiUrl && (
+                <p className="text-xs text-amber-600 dark:text-amber-400">
+                  This provider requires a server-side proxy. Use
+                  {" "}
+                  <span className="font-mono">/api/indian-stock?name=...</span>
+                  {" "}
+                  instead of the direct IndianAPI URL.
+                </p>
+              )}
             </div>
 
             <div className="space-y-2">
@@ -468,5 +486,3 @@ export function WidgetSettingsDialog({ widget, open, onOpenChange }: WidgetSetti
     </Dialog>
   )
 }
-
-

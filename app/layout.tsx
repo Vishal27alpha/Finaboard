@@ -11,24 +11,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "FinBoard - Finance Dashboard",
   description: "Customizable real-time finance monitoring dashboard",
-  generator: "v0.app",
-  icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
-  },
+  generator: "",
 }
 
 export default function RootLayout({
@@ -67,24 +50,8 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "FinBoard - Finance Dashboard",
   description: "Customizable real-time finance monitoring dashboard",
-  generator: "v0.app",
-  icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
-  },
+  generator: "",
+  
 }
 
 export default function RootLayout({
@@ -107,4 +74,3 @@ export default function RootLayout({
     </html>
   )
 }
-

@@ -73,12 +73,11 @@ export function JsonExplorer({ data, selectedFields, onFieldToggle }: JsonExplor
           </div>
           {isExpanded && (
             <div className="ml-6 space-y-1">
-             {Object.entries(value).map(([childKey, childValue]) => (
-  <div key={childKey}>
-    {renderValue(childValue, childKey, childKey)}
-  </div>
-))}
-
+              {Object.entries(value).map(([childKey, childValue]) => (
+                <div key={childKey}>
+                  {renderValue(childValue, `${path}.${childKey}`, childKey)}
+                </div>
+              ))}
             </div>
           )}
         </div>

@@ -155,6 +155,5 @@ export function getNestedValue(obj: any, path: string): any {
 
 export function getFieldValue(obj: any, fieldKey: string): any {
   if (!obj || !fieldKey) return undefined
-  return obj[fieldKey]
+  return getNestedValue(obj, fieldKey)
 }
-
